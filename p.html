@@ -1,154 +1,342 @@
 <!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <html lang="en">
 <head>
- <style>
-  .center-text {
-    text-align: top-center;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+<body>
+
+<style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background: linear-gradient(135deg, #fff5f7, #f0f4ff, #f3fff9);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(120deg, #6a11cb, #2575fc, #ec4899);
+      color: white;
+      padding: 45px 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 8px;
+      color: #fff;
+    }
+
+    /* Navigation */
+    nav {
+      background: linear-gradient(90deg, #25245c, #4936a5);
+      padding: 16px 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcf5c;
+      border-bottom: 2px solid #ffcf5c;
+      padding-bottom: 5px;
+    }
+
+    /* Sections */
+    section {
+      padding: 55px 25px;
+      max-width: 1100px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 18px;
+      box-shadow: 0 5px 25px rgba(70, 70, 150, 0.10);
+    }
+
+    section h2 {
+      color: #5636b5;
+      font-size: 28px;
+      margin-bottom: 22px;
+      border-left: 5px solid #ec4899;
+      padding-left: 12px;
+    }
+
+    /* Projects Grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    /* Cards */
+    .card {
+      background: linear-gradient(145deg, #ffffff, #f0edff);
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #e2d9ff;
+      box-shadow: 0 5px 15px rgba(80, 50, 150, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(100, 60, 200, 0.20);
+      border-color: #a78bfa;
+    }
+
+    .card h3 {
+      color: #7138c8;
+      margin-bottom: 12px;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 9px 18px;
+      margin: 7px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: linear-gradient(120deg, #ec4899, #f59e0b);
+      transform: scale(1.08);
+    }
+
+    /* Links and Buttons */
+    a {
+      transition: 0.3s;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(120deg, #ec4899, #7138c8);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      box-shadow: 0 4px 12px rgba(150, 50, 150, 0.2);
+    }
+
+    .btn:hover {
+      background: linear-gradient(120deg, #2575fc, #20bca7);
+      transform: translateY(-3px);
+    }
+
+    /* Contact */
+    #contact a {
+      color: #7138c8;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      color: #ec4899;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: linear-gradient(120deg, #25245c, #7138c8, #ec4899);
+      color: white;
+      padding: 22px;
+      margin-top: 35px;
+      font-size: 15px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      nav {
+        padding: 12px 5px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 7px;
+        font-size: 13px;
+      }
+
+      section {
+        padding: 30px 18px;
+        margin: 18px 12px;
+      }
+
+      section h2 {
+        font-size: 23px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
 </style>
+
 </head>
 <body>
 
- <table>
-      <tr>
-<td><img src="pooja.png.png" alt="Pooja Ojha" width="150" height="150"></td>
-
-   <td> <h1 class="top-center-text" >Pooja Ojha</h1>
-    <p>Java Full Stack Developer </p>
-    <p > Hyderabad,india |<a href=""> info@yonosys.com  <a href="https://www.yonosys.com/"> | yonosys.com </a></p></td>
+  <nav>
+    <a href="#Home">Home</a>
+    <a href="#About">About</a>
+    <a href="#Skills">Skills</a>
+    <a href="#Education & Course">Education & Course</a>
+    <a href="#Projects">Projects</a>
+    <a href="#Contact">Contact</a>
     
-  </tr>
-</table>
-    
-  
-  
-    <h2>Professional Summary</h2>
-     <hr>
-    <p> <ul>
-<li>Hands-on experience in developing dynamic web-based software applications.<br></li>
-
-<li>Strong understanding of the Software Development Life Cycle (SDLC).<br></li>
-
-<li>Experienced in developing and delivering projects using the Agile model.<br></li>
-
-<li>Experienced in writing unit test cases for fixed Functional Requirement.<br></li>
-
-<li>Specifications (FRS), Feature Requests (FR), and Change Requests (CR).<br></li>
-
-<li>Knowledge of deploying and managing applications on Apache Tomcat server.<br></li>
-
-<li>Skilled in handling GitHub repositories for version control, collaboration, and code management.<br></li>
-
-<li>Worked on integrating web applications with relational databases (MySQL) for dynamic data management<br></li>
-
-<li>Hands-on experience in developing and maintaining Java-based web applications using Servlets, JSP, and JDBC<br></li>
-
-<li>Comfortable with inspecting and validating locators using development tools such as SelectorsHub and TruePath.<br></li>
-
-<li>Proficient in issue tracking and project management using tools such as JIRA for effective collaboration and task tracking.<br></li>
-
-<li>Solid knowledge of White-hox Testing and Black-box Testing,Strong expertise in System Testing including Smoke Testing. <br></li>
-
-<li>Retesting Regression Testing and Sanity Testing.<br></li>
-
-</ul>
-
-
+  </nav>
+  <section id="Home">
+    <h2>Home</h2>
+     <div class="card">
+     <h4>Hi,Im Pooja Oza</h4>
+     <p>Full Name:Pooja Giriraj Oza</p>
+    <p> Full Stack Developer<br>
+       I am passionate and enthusiastic Full Stack Web Developer. 
+        Eager to leverage academic knowledge and practical skills 
+        to contribute effectively to the development of dynamic and
+        responsive web applications.
+       
+        <div style="text-align:center;">
+          
+       <img src="pooja.png.png" alt="Pooja Oza" width="200" height="200"></div>
     </p>
     
-    
+    <button ><a href="file:///C:/Users/ADMIN/Downloads/Resume%20(32).pdf"style="color:#4a90e2;">Download Resume</a></p></button>
+ 
+</div>
 
- 
-    
-      
- 
-    <h2>Skills</h2>
-     <hr><ul>
-       <li><b>Programming Languages:</b>Java<br></li>
-       <li><b>Web Technologies:</b>HTML, CSS, JavaScript<br></li>
-       <li><b>DataBase:</b>MySQL<br></li>
-       <li><b>Management Tools:</b>Jira<br></li>
-       <li><b>Repository Management Tools:</b>GitHub<br></li>
-        </ul>
-        
-       <h2>Experience</h2>
-       <hr><ul>
-       <p style="text-align:right;">Aug 2024 - Present Hyderabad</p>
-       <h2>Yonosys Technologies Pvt.Ltd<br></h2>
-        <li><b>Project:</b>PMS(Progress Mapping System)<br></li>
-        <li><b>Role:</b>Java Developer<br></li>
-        <li><b>Languages:</b>Java,HTML,CSS,JavaScript<br></li>
-        <li><b>Frameworks:</b>Spring Boot<br></li>
-        <li><b>DataBase:</b>MYSQL<br></li>
-        </ul>
-   <h2> Project Description:</h2>
- <ul>
-<li>Developed a Progress Mapping System (PMS) to efficiently track and manage tasks and projects within the organization.<br></li>
-<li>Designed and implemented the backend using Spring Boot to handle APIs, data processing, and business logic.<br></li>
-<li>Created a responsive front-end using HTML, CSS, and JavaScript for intuitive user interaction and real-time updates.<br></li>
-<li>Managed data persistence and retrieval using MySQL database for storing project and task records securely.<br></li>
-<li>Implemented role-based access and modular architecture to ensure scalability and maintainability.<br></li>
-<li>Conducted thorough testing and validation of APIs and frontend functionality to ensure reliability and performance.<br></li>
-</ul>
-<h2>Roles & Responsibilities:</h2>
-<ul>
-<li>Requirement analysis and understanding of functional specifications.<br></li>
-<li>Designing and developing code for new FRS/FR/CR requests.<br></li>
-<li>Debugging and resolving application issues and defects.<br></li>
-<li>Creating and executing unit test cases to ensure code quality.<br></li>
-<li>Collaborating with the team and participating in regular meetings to track progress and align deliverables.<br></li>
-</ul>
- 
-  
-    <h2> Education </h2>
-    <hr>
-    <ul>
-       <li> B.Tech Computer Science - V.D.F College, Latur <br></li>
-        (2020 - 2023) <br>
-         CGPA:8 <br>
-        
-        <li>Diploma Computer Science - M.D.A College, Latur <br></li>
-        (2016 - 2020) <br>
-         CGPA:7.5 <br>
-       
-</ul>
+  </section>
    
-    <h2>Projects</h2>
-    <hr>
-       <ul>
-   <h3>Calculator</h3>
-        <li><p>A Calculator was developed to slove <br>
-           arithmetic function using js knowledge</p></li>
-            
-           <li> <P>Language used:</P></li>
-            HTML
-            CSS
-            JavaScript
+  <section id="About">
+    <h2>About Me</h2>
+     <div class="card">
 
-              
-      <h3>Driver Drowsiness Detection</h3>
-      <li><p>Followed Software Development Life Cycle process<br></li>
-       <li>Detects drowsiness to decrease road accidents<br></li>
-       <li>No database storage or external devices required</p></li>
+    <p>  I am a Computer Engineering graduate with industrial training experience at Briskminds Software Pvt. Ltd. 
+and a growing technical foundation in Salesforce CRM, Java, Python, and software development
+During my technical training and hands-on practice, I have strengthened my understanding of Salesforce development concepts, including Apex programming, database operations, and working with CRM records.
+My Career Goal To begin and grow my career as a Salesforce Developer, Salesforce Administrator, or Software Engineer, contributing my technical knowledge, adaptability, and problem-solving abilities to a collaborative development team.
+
+I am a passionate and motivated Computer Science graduate with a strong foundation in Java Full Stack Development, Core Java, and Salesforce Administration. I have completed professional training and certifications in Java programming, full-stack development, and Salesforce, along with practical industry experience through software development internships.
+
+I have hands-on knowledge of Core Java, HTML, CSS, JavaScript, Angular, and Salesforce Administration. I am familiar with object-oriented programming (OOPs), database concepts, web development, and software development methodologies. I enjoy solving technical problems, learning new technologies, and developing efficient, scalable, and user-friendly applications.
+
+I have gained practical industry exposure through my Java Developer Internship at Yonosys Technologies Pvt. Ltd., Hyderabad, and professional training at Briskminds Software Solutions Pvt. Ltd
+.
+I am continuously improving my technical and problem-solving skills and looking for an opportunity as a Java Developer, Software Developer, Full Stack Developer, or Salesforce Administrator where I can contribute my knowledge, grow professionally, and work on real-world projects.<br></p>
+      </div>
+  </section>
+
+  <section id="Skills">
+    <h2>Skills</h2>
+     <div class="card">
+    <ul>
+        <h4>Programming Languages</h4>
+        <li>Java,Python,C,SQL</li>
+        <h4>Web Technologies</h4>
+      <li>HTML, CSS, JavaScript</li>
+       <h4>DataBase</h4>
+        <li>MySQL</li>
+        <h4>Tools</h4>
+        <li>Git</li>
+        <li>MS Office</li>
+       </div>
     </ul>
-    <h2> Certifications </h2>
-       <hr>
-<ul>
-        <li>Advanced Program on Java Full Stack Development (Angular) – Anudeep Foundation<br></li>
-       <li> Python Programming – Om Sai Info<br></li>
-       <li> Core Java – Naresh IT<br></li>
-     </ul>
-         <br>
-         <br>
-          <br>
-          <br>
-  
-        <div style="text-align: center;">
-      <button><a href="file:///C:/Users/ADMIN/Downloads/Pooja%20Oza-1%20(2).pdf"style="color:blue;">Download Resume</a></button>
- 
+  </section>
+  <section id="Course">
+    <section id="Education">
+    <h2>Education & Course </h2>
+    <div class="card">
+        <ul>
+        <li>BTech Computer Science | V.D.F College, Latur (2020 - 2023)</li>
+        <li>Diploma Computer Science | M.D.A College, Latur (2016 - 2020)</li>
+        </ul>
+      <ul>
+        <li>Core Java ,Anudeep Foundation,Latur </li>
+        <li> Python Programming, Om Sai Info,Latur</li>
+        <li>Java Developer internship - Yonosys Technologies Pvt. Ltd., Hyderabad, Telangana | Aug 2025 </li>
+        <li> Core Java & Salesforce Administrator - Briskminds Software Solutions Private Limited | Aug 2026</li>
+      </ul>
+    </div>
+  </section>
+
+    <section id="Projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <div class="calculator">
+        <h3>Calculator</h3>
+        <p>A Calculator was developed to slove <br>
+           arithmetic function using js knowledge
+            </p>
+            <P>Language used:</P>
+            <button>HTML</button>
+            <button>CSS</button>
+            <button>JavaScript</button>
+
+               </div>
+              
+
+   
+      <div>
+      <h3>Driver Drowsiness Detection</h3>
+      <p>Followed Software Development Life Cycle process<br>
+         Detects drowsiness to decrease road accidents<br>
+         No database storage or external devices required</p>
+    </div>
       
-      <button><a href="https://yonosyshyd-prog.github.io/yonosysemp/"style="color:blue;">Back</a></button>
-     </div>
+  </section>
+
+  <section id="Contact">
+    <h2>Contact Me</h2>
+     <div class="card">
+        
+        <p>📞 7666385044 | ✉️ poojaoza99@gmail.com | 📍 Latur, Maharashtra</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/pooja-oza251/">www.linkedin.com/in/pooja-oza251</a></p>
+        <p>GitHub: <a href="https://github.com/poojaoza99">github.com/poojaoza99</a></p>
+        <p>salesforcelink: <a href="https://www.salesforce.com/trailblazer/poojaoza">salesforce.com/poojaoza</a></p>
+
+  </section>
+</div>
+  
+<footer>
+    <p>© 2025 Pooja Oza | Portfolio</p>
+    <p>🔗 LinkedIn: <a href="#" style="color:#4a90e2;">Pooja Oza</a></p>
+  </footer>
 
 </body>
 </html>
